@@ -1,14 +1,23 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Mirco Bellagamba`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Mirco Bellagamba`,
+      email: `mirco.bellag@gmail.com`,
+      role: `Software engineer`,
+      summary: `who lives and works in Ancona building useful things.`,
+      bio:
+        "I am an experienced web and mobile engineer with a broad development background from JavaScript to C#. " +
+        "I have worked with front-end web development, distributed systems, mobile apps and cloud environments. " +
+        "My greatest interest is software architectures and how to build software that is easy to evolve, scale and maintain. " +
+        "This passion has led me to experiment several technologies, development methodologies and to improve my decision making skills.",
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
+    siteUrl: `https://mircobellagamba.com/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `mircoBellaG`,
+      linkedin: `mirco-bellagamba`,
+      github: `mbellagamba`,
     },
   },
   plugins: [
@@ -24,6 +33,13 @@ module.exports = {
       options: {
         path: `${__dirname}/content/assets`,
         name: `assets`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/works`,
+        name: `works`,
       },
     },
     {
@@ -60,24 +76,19 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Mirco Bellagamba Website`,
+        short_name: `Mirco Bellagamba`,
         start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
+        background_color: `#000000`,
+        theme_color: `#ffffff`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/mb-icon.png`,
+        icon_options: {
+          purpose: `maskable`,
+        },
       },
     },
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 }

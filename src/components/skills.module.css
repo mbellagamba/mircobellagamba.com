@@ -1,0 +1,32 @@
+.skills {
+  list-style: none;
+  padding: 0;
+}
+
+.skills > li {
+  padding: var(--space-s);
+  background-color: var(--bg-secondary);
+  border-radius: 0.5rem;
+  margin-bottom: var(--space-s);
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.skills > li:hover {
+  background-color: var(--bg-secondary-active);
+}
+
+.heading {
+  font-family: var(--font-family-heading);
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+
+.illustration {
+  margin: 0 var(--space-m);
+}
+
+@media screen and (min-width: 600px) {
+  .illustration {
+    min-height: 350px;
+  }
+}

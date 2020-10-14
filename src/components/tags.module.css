@@ -1,0 +1,18 @@
+.taglist {
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0;
+  margin: 0 0 var(--space-s) 0;
+}
+
+.tagitem {
+  padding: var(--space-xs) var(--space-s);
+  text-transform: lowercase;
+  border-radius: 0.4rem;
+  background-color: var(--bg-secondary);
+  margin-right: var(--space-xs);
+  margin-bottom: 0;
+  font-weight: 600;
+  display: flex;
+}
