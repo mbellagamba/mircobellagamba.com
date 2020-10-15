@@ -40,6 +40,7 @@ export default function Header({ location, title }) {
         className={styles.menu}
         role="menu"
         aria-labelledby="toggle-menu"
+        data-menu-open={menuOpen}
       >
         <button
           className={`text-button ${styles.close}`}

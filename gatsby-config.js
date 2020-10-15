@@ -5,14 +5,14 @@ module.exports = {
       name: `Mirco Bellagamba`,
       email: `mirco.bellag@gmail.com`,
       role: `Software engineer`,
-      summary: `who lives and works in Ancona building useful things.`,
+      summary: `is a software engineer, living in Ancona (Italy), dealing with frontend web development and mobile applications.`,
       bio:
         "I am an experienced web and mobile engineer with a broad development background from JavaScript to C#. " +
         "I have worked with front-end web development, distributed systems, mobile apps and cloud environments. " +
         "My greatest interest is software architectures and how to build software that is easy to evolve, scale and maintain. " +
         "This passion has led me to experiment several technologies, development methodologies and to improve my decision making skills.",
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `Mirco Bellagamba is a software engineer dealing with frontend web development and mobile applications. Software architectures, modern web technologies, microservices are some of the IT topics he is most interested in.`,
     siteUrl: `https://mircobellagamba.com/`,
     social: {
       twitter: `mircoBellaG`,

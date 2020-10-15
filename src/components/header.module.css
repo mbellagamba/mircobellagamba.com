@@ -19,25 +19,27 @@
 
 .menu {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--bg);
 }
 
-@media screen and (max-width: 600px) {
-  .menu {
-    display: none;
-  }
-  .menu[aria-hidden="false"] {
+.menu[data-menu-open="false"] {
+  display: none;
+}
+
+@media screen and (min-width: 600px) {
+  .menu[data-menu-open] {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    z-index: 1;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: var(--bg);
+    flex-direction: row;
+    position: static;
   }
 }
 
@@ -56,7 +58,7 @@
   background: none;
   border: none;
   padding: 0;
-  line-height: 0;
+  display: inline-flex;
   cursor: pointer;
 }
 
@@ -68,6 +70,7 @@
 
 .close {
   position: absolute;
+  display: inline-flex;
   color: var(--text-link);
   top: var(--space-m);
   right: var(--space-m);
