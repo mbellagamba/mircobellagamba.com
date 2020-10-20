@@ -16,7 +16,7 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="MB" />
+      <SEO title="Mirco Bellagamba: frontend engineer, enthusiastic coder" />
       <div
         className="two-columns-grid"
         style={{
