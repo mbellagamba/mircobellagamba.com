@@ -14,6 +14,12 @@ module.exports = {
     },
     description: `Mirco Bellagamba is a software engineer dealing with frontend web development and mobile applications. Software architectures, modern web technologies, microservices are some of the IT topics he is most interested in.`,
     siteUrl: `https://mircobellagamba.com/`,
+    keywords: [
+      "mirco bellagamba",
+      "software engineer",
+      "web developer",
+      "app developer",
+    ],
     social: {
       twitter: `mircoBellaG`,
       linkedin: `mirco-bellagamba`,

@@ -10,16 +10,34 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-const SEO = ({ description, lang, meta, title }) => {
-  const { site } = useStaticQuery(
+const SEO = ({
+  description,
+  lang,
+  meta,
+  title,
+  image: metaImage,
+  pathname,
+}) => {
+  const { site, defaultImage } = useStaticQuery(
     graphql`
       query {
         site {
           siteMetadata {
             title
             description
+            keywords
+            siteUrl
             social {
               twitter
+            }
+          }
+        }
+        defaultImage: file(absolutePath: { regex: "/cover.png/" }) {
+          childImageSharp {
+            resize(width: 1200) {
+              src
+              height
+              width
             }
           }
         }
@@ -28,6 +46,9 @@ const SEO = ({ description, lang, meta, title }) => {
   )
 
   const metaDescription = description || site.siteMetadata.description
+  const image =
+    metaImage && metaImage.src ? metaImage : defaultImage.childImageSharp.resize
+  const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null
 
   return (
     <Helmet
@@ -36,10 +57,15 @@ const SEO = ({ description, lang, meta, title }) => {
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
+      link={canonical ? [{ rel: "canonical", href: canonical }] : []}
       meta={[
         {
           name: `description`,
           content: metaDescription,
+        },
+        {
+          name: "keywords",
+          content: site.siteMetadata.keywords.join(","),
         },
         {
           property: `og:title`,
@@ -48,6 +74,10 @@ const SEO = ({ description, lang, meta, title }) => {
         {
           property: `og:description`,
           content: metaDescription,
+        },
+        {
+          property: `og:url`,
+          content: site.siteMetadata.siteUrl,
         },
         {
           property: `og:type`,
@@ -62,12 +92,36 @@ const SEO = ({ description, lang, meta, title }) => {
           content: site.siteMetadata.social.twitter,
         },
         {
+          name: `twitter:site`,
+          content: site.siteMetadata.social.twitter,
+        },
+        {
           name: `twitter:title`,
           content: title,
         },
         {
           name: `twitter:description`,
           content: metaDescription,
+        },
+        {
+          property: "og:image",
+          content: `${site.siteMetadata.siteUrl}${image.src}`,
+        },
+        {
+          property: "og:image:width",
+          content: image.width,
+        },
+        {
+          property: "og:image:height",
+          content: image.height,
+        },
+        {
+          property: "twitter:image",
+          content: `${site.siteMetadata.siteUrl}${image.src}`,
+        },
+        {
+          name: "twitter:card",
+          content: "summary_large_image",
         },
       ].concat(meta)}
     />
@@ -85,6 +139,12 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
+  pathname: PropTypes.string,
+  image: PropTypes.shape({
+    src: PropTypes.string.isRequired,
+    height: PropTypes.number.isRequired,
+    width: PropTypes.number.isRequired,
+  }),
 }
 
 export default SEO
