@@ -2,6 +2,7 @@ import React from "react"
 
 import Header from "./header"
 import Footer from "./footer"
+import CookieConsent from "./cookie-consent"
 
 const Layout = ({ location, title, children }) => {
   return (
@@ -13,6 +14,7 @@ const Layout = ({ location, title, children }) => {
       <footer>
         <Footer />
       </footer>
+      <CookieConsent />
     </div>
   )
 }

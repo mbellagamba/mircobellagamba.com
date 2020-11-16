@@ -7,9 +7,13 @@ export const ThemeContext = React.createContext()
 
 export const ThemeProvider = props => {
   const [theme, setTheme] = usePersistedState("light", "theme")
-  const isDark = theme === "dark"
   const toggleTheme = () => {
-    setTheme(isDark ? "light" : "dark")
+    setTheme(t => (t === "dark" ? "light" : "dark"))
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "switch_theme", {
+        event_category: "engagement",
+      })
+    }
   }
 
   return (
