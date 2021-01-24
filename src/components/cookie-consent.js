@@ -4,7 +4,7 @@ import styles from "./cookie-consent.module.css"
 
 const CookieConsent = () => {
   const [consent, setConsent] = usePersistedState("", "cookie-consent")
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     const allowCookies = () => setConsent(true)
     window.addEventListener("click", allowCookies)
     window.addEventListener("scroll", allowCookies)

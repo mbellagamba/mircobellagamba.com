@@ -1,12 +1,11 @@
 import React from "react"
 import { Helmet } from "react-helmet"
-
-import usePersistedState from "../hooks/usePersistedState"
+import useDarkMode from "../hooks/useDarkMode"
 
 export const ThemeContext = React.createContext()
 
 export const ThemeProvider = props => {
-  const [theme, setTheme] = usePersistedState("light", "theme")
+  const [theme, setTheme] = useDarkMode()
   const toggleTheme = () => {
     setTheme(t => (t === "dark" ? "light" : "dark"))
     if (typeof window !== "undefined" && window.gtag) {

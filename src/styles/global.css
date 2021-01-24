@@ -22,6 +22,9 @@
   --surface: #ffffff;
   --bg-secondary: #fafafd;
   --bg-secondary-active: #f2f2f5;
+  --bg-twitter: #1da1f211;
+  --bg-github: #00000011;
+  --bg-linkedin: #00609711;
 }
 
 .dark {
@@ -35,6 +38,9 @@
   --surface: #181818;
   --bg-secondary: #1d1f1f;
   --bg-secondary-active: #2d2f2f;
+  --bg-twitter: #b5b5b599;
+  --bg-github: #b5b5b599;
+  --bg-linkedin: #b5b5b599;
 }
 
 body {

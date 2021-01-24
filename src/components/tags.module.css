@@ -10,7 +10,7 @@
   padding: var(--space-xs) var(--space-s);
   text-transform: lowercase;
   border-radius: 0.4rem;
-  background-color: var(--bg-secondary);
+  background-color: var(--surface);
   margin-right: var(--space-xs);
   margin-bottom: 0;
   font-weight: 600;

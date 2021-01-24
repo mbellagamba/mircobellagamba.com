@@ -1,14 +1,10 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
-import { ThemeContext } from "../styles/theme-context"
 import styles from "./footer.module.css"
 import Section from "./section"
 
 export default function Footer() {
-  const [theme] = React.useContext(ThemeContext)
-  const darkIconStyle =
-    theme === "dark" ? { backgroundColor: "#ffffff99" } : undefined
   const { avatar, site } = useStaticQuery(graphql`
     query Footer {
       avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
@@ -55,7 +51,6 @@ export default function Footer() {
               <a
                 href={`https://twitter.com/${site.siteMetadata.social.twitter}`}
                 className={styles.social}
-                style={darkIconStyle}
                 aria-label="twitter"
               >
                 <svg viewBox="0 0 24 24">
@@ -66,7 +61,6 @@ export default function Footer() {
               <a
                 href={`https://github.com/${site.siteMetadata.social.github}`}
                 className={styles.social}
-                style={darkIconStyle}
                 aria-label="github"
               >
                 <svg viewBox="0 0 24 24">
@@ -77,7 +71,6 @@ export default function Footer() {
               <a
                 href={`https://linkedin.com/in/${site.siteMetadata.social.linkedin}`}
                 className={styles.social}
-                style={darkIconStyle}
                 aria-label="linkedin"
               >
                 <svg viewBox="0 0 24 24">

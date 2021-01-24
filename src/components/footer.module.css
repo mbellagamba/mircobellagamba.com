@@ -43,15 +43,15 @@
 }
 
 .social[aria-label="twitter"] {
-  background-color: #1da1f211;
+  background-color: var(--bg-twitter);
 }
 
 .social[aria-label="github"] {
-  background-color: #00000011;
+  background-color: var(--bg-github);
 }
 
 .social[aria-label="linkedin"] {
-  background-color: #00609711;
+  background-color: var(--bg-linkedin);
 }
 
 .social > svg {
