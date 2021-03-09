@@ -1,18 +1,21 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Image from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Section from "../components/section"
 
 export default function About({ data, location }) {
-  const siteTitle = data.site.siteMetadata.title
-  const images = data.allFile.nodes.map(n => n.childImageSharp.fixed)
+  const { title, author } = data.site.siteMetadata
+  const images = data.allFile.nodes.map(n => n.childImageSharp.gatsbyImageData)
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location} title={title}>
       <SEO title="About" />
-      <Section title="About" className="two-columns-grid">
+      <Section title="About">
+        <p>{author.bio}</p>
+      </Section>
+      <Section title="Background" className="two-columns-grid">
         <AboutList
           title="Work experiences"
           items={workExperiences}
@@ -42,8 +45,8 @@ const AboutList = ({ title, items, images }) => (
             marginBottom: "var(--space-s)",
           }}
         >
-          <Image
-            fixed={findImage(images, item.icon)}
+          <GatsbyImage
+            image={findImage(images, item.icon)}
             alt={item.subtitle}
             style={{ borderRadius: "10%" }}
           />
@@ -70,18 +73,19 @@ const AboutList = ({ title, items, images }) => (
 )
 
 export const pageQuery = graphql`
-  query {
+  {
     site {
       siteMetadata {
         title
+        author {
+          bio
+        }
       }
     }
     allFile(filter: { absolutePath: { regex: "/assets/about/.*.png$/" } }) {
       nodes {
         childImageSharp {
-          fixed(width: 60, height: 60) {
-            ...GatsbyImageSharpFixed
-          }
+          gatsbyImageData(width: 60, height: 60, layout: FIXED)
         }
       }
     }
@@ -89,7 +93,7 @@ export const pageQuery = graphql`
 `
 
 const findImage = (images, imgName) =>
-  images.find(img => img.src.endsWith(`${imgName}.png`))
+  images.find(img => img.images.fallback.src.endsWith(`${imgName}.png`))
 
 const workExperiences = [
   {

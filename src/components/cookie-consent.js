@@ -1,19 +1,18 @@
 import React from "react"
-import usePersistedState from "../hooks/usePersistedState"
-import styles from "./cookie-consent.module.css"
+import * as styles from "./cookie-consent.module.css"
 
 const CookieConsent = () => {
-  const [consent, setConsent] = usePersistedState("", "cookie-consent")
+  const [consent, setConsent] = React.useState(true)
+  function addConsent() {
+    setConsent(true)
+    window.localStorage.setItem("cookie-consent", true)
+  }
   React.useEffect(() => {
-    const allowCookies = () => setConsent(true)
-    window.addEventListener("click", allowCookies)
-    window.addEventListener("scroll", allowCookies)
-    return () => {
-      window.removeEventListener("click", allowCookies)
-      window.removeEventListener("scroll", allowCookies)
+    if (typeof window !== "undefined") {
+      setConsent(window.localStorage.getItem("cookie-consent") || false)
     }
-  }, [setConsent])
-  if (consent !== "") return null
+  }, [])
+  if (consent) return null
   return (
     <div className={styles.banner} onClick={ev => ev.stopPropagation()}>
       <p>
@@ -24,10 +23,10 @@ const CookieConsent = () => {
         continuing to browse this page, interacting with a link or button
         outside this information or continuing to browse in any other way.
       </p>
-      <button className={styles.confirm} onClick={() => setConsent(true)}>
+      <button className={styles.confirm} onClick={addConsent}>
         I agree
       </button>
-      <button className={styles.close} onClick={() => setConsent(true)}>
+      <button className={styles.close} onClick={addConsent}>
         ×
       </button>
     </div>

@@ -52,11 +52,9 @@ const SEO = ({
 
   return (
     <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      htmlAttributes={{ lang }}
+      title={title ?? site.siteMetadata.title}
+      titleTemplate={title ? `%s | ${site.siteMetadata.title}` : undefined}
       link={canonical ? [{ rel: "canonical", href: canonical }] : []}
       meta={[
         {
@@ -138,7 +136,7 @@ SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   pathname: PropTypes.string,
   image: PropTypes.shape({
     src: PropTypes.string.isRequired,

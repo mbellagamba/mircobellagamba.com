@@ -3,7 +3,7 @@ import BackendIllustration from "./illustrations/backend"
 import FrontendIllustration from "./illustrations/frontend"
 import MobileIllustration from "./illustrations/mobile"
 import Section from "./section"
-import styles from "./skills.module.css"
+import * as styles from "./skills.module.css"
 
 export default function Skills() {
   const [current, setCurrent] = React.useState("frontend")

@@ -1,12 +1,12 @@
 import React from "react"
-import style from "./tags.module.css"
+import * as styles from "./tags.module.css"
 
 export default function Tags({ tags }) {
   if (!tags) return null
   return (
-    <ul className={style.taglist}>
+    <ul className={styles.taglist}>
       {tags.split(" ").map(tag => (
-        <li key={tag} className={style.tagitem}>
+        <li key={tag} className={styles.tagitem}>
           <small>#{tag}</small>
         </li>
       ))}

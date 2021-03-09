@@ -1,21 +1,18 @@
 module.exports = {
-  flags: {
-    DEV_SSR: false,
-  },
   siteMetadata: {
     title: `Mirco Bellagamba`,
     author: {
       name: `Mirco Bellagamba`,
       email: `mirco.bellag@gmail.com`,
       role: `Software engineer`,
-      summary: `is a software engineer, living in Ancona (Italy), dealing with frontend web development and mobile applications.`,
+      summary: `He is a software engineer, living in Ancona (Italy), building high performance, interactive applications, using web technologies. Front-end and app engineer at Madisoft. He builds software for humans.`,
       bio:
         "I am an experienced web and mobile engineer with a broad development background from JavaScript to C#. " +
         "I have worked with front-end web development, distributed systems, mobile apps and cloud environments. " +
         "My greatest interest is software architectures and how to build software that is easy to evolve, scale and maintain. " +
         "This passion has led me to experiment several technologies, development methodologies and to improve my decision making skills.",
     },
-    description: `Mirco Bellagamba is a software engineer dealing with frontend web development and mobile applications. Software architectures, modern web technologies, microservices are some of the IT topics he is most interested in.`,
+    description: `Mirco Bellagamba builds high performance, interactive applications, using web technologies. Front-end and app engineer at Madisoft. He builds software for humans.`,
     siteUrl: `https://mircobellagamba.com/`,
     keywords: [
       "mirco bellagamba",
@@ -73,8 +70,9 @@ module.exports = {
         ],
       },
     },
-    `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -93,6 +91,7 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-offline`,
+    `gatsby-plugin-dark-mode`,
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {

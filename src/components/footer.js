@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
-import styles from "./footer.module.css"
+import { GatsbyImage } from "gatsby-plugin-image"
+import * as styles from "./footer.module.css"
 import Section from "./section"
 
 export default function Footer() {
@@ -9,9 +9,7 @@ export default function Footer() {
     query Footer {
       avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
         childImageSharp {
-          fluid(maxWidth: 250) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(width: 250, layout: CONSTRAINED)
         }
       }
       site {
@@ -80,8 +78,8 @@ export default function Footer() {
               </a>
             </div>
           </div>
-          <Image
-            fluid={avatar.childImageSharp.fluid}
+          <GatsbyImage
+            image={avatar.childImageSharp.gatsbyImageData}
             alt={site.siteMetadata.author.name}
             imgStyle={{
               borderRadius: `5%`,

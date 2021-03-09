@@ -22,7 +22,7 @@ export default function Works({ data, location }) {
 }
 
 export const pageQuery = graphql`
-  query {
+  {
     site {
       siteMetadata {
         title
@@ -47,9 +47,7 @@ export const pageQuery = graphql`
             url
             icon {
               childImageSharp {
-                fixed(width: 50, height: 50) {
-                  ...GatsbyImageSharpFixed
-                }
+                gatsbyImageData(width: 50, height: 50, layout: FIXED)
               }
             }
           }

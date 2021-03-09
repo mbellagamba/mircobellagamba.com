@@ -1,5 +1,5 @@
 import React from "react"
-import Image from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import Tags from "./tags"
 
@@ -8,9 +8,10 @@ export default function WorkItem({ node }) {
   return (
     <article style={{ display: "flex", borderRadius: "0.5rem" }}>
       {node.frontmatter.icon && (
-        <Image
-          fixed={node.frontmatter.icon.childImageSharp.fixed}
+        <GatsbyImage
+          image={node.frontmatter.icon.childImageSharp.gatsbyImageData}
           style={{ borderRadius: "0.5rem", border: "1px solid #00000044" }}
+          alt={`${title} logo`}
         />
       )}
       <div style={{ flex: 1, marginLeft: "var(--space-m)" }}>

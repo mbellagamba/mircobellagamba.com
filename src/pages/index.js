@@ -16,37 +16,23 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="Mirco Bellagamba: frontend engineer, enthusiastic coder" />
+      <SEO />
       <div
         className="two-columns-grid"
         style={{
           fontFamily:
             "'Segoe UI', 'Helvetica Neue', 'Helvetica', Arial, sans-serif",
           fontSize: "x-large",
-          marginBottom: "var(--space-xl)",
           font: "200 3rem/3.5rem var(--font-family-heading)",
         }}
       >
-        <div>
-          <div>Hi, I'm Mirco.</div>
-          <div>
-            I enjoy crafting quality software for{" "}
-            <span style={{ color: "var(--primary)" }}>people</span>.
-          </div>
-        </div>
+        <p>
+          Hi, I'm Mirco.
+          <br />I enjoy crafting quality software for{" "}
+          <span style={{ color: "var(--primary)" }}>people</span>.
+        </p>
         <MainIllustration />
-        <div></div>
       </div>
-
-      <p
-        style={{
-          marginBottom: "var(--space-l)",
-          fontSize: "x-large",
-          lineHeight: "2rem",
-        }}
-      >
-        {data.site.siteMetadata.author.bio}
-      </p>
       <Link to="/about/">About me</Link>
       <Skills />
       <Section title="Blog">
@@ -68,7 +54,7 @@ const BlogIndex = ({ data, location }) => {
 export default BlogIndex
 
 export const pageQuery = graphql`
-  query {
+  {
     site {
       siteMetadata {
         title
@@ -116,9 +102,7 @@ export const pageQuery = graphql`
             url
             icon {
               childImageSharp {
-                fixed(width: 50, height: 50) {
-                  ...GatsbyImageSharpFixed
-                }
+                gatsbyImageData(width: 50, height: 50, layout: FIXED)
               }
             }
           }
