@@ -2,7 +2,7 @@
 title: "Toyota Web Interactive Dashboard"
 date: "2017-06-15"
 description: "Data analytics platform showing complex charts with filters and several aggregation levels"
-tags: "react javascript c# entityframework"
+tags: "react javascript c-sharp entityframework"
 icon: "./icon.png"
 ---
 

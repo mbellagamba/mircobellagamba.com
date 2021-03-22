@@ -9,6 +9,7 @@
 .tagitem {
   padding: var(--space-xs) var(--space-s);
   text-transform: lowercase;
+  border: 1px solid var(--primary);
   border-radius: 0.4rem;
   background-color: var(--surface);
   margin-right: var(--space-xs);
