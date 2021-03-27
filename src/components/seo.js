@@ -32,7 +32,7 @@ const SEO = ({
             }
           }
         }
-        defaultImage: file(absolutePath: { regex: "/cover.png/" }) {
+        defaultImage: file(absolutePath: { regex: "/cover.jpg/" }) {
           childImageSharp {
             resize(width: 1200) {
               src
