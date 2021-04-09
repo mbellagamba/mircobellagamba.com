@@ -173,7 +173,17 @@ It instructs Jest with Testing Library custom matchers.
 Create the file _<rootDir>/test/config/cssTransform.js_.
 
 ```javascript
+"use strict"
 
+module.exports = {
+  process() {
+    return "module.exports = {};"
+  },
+  getCacheKey() {
+    // The output is always the same.
+    return "cssTransform"
+  },
+}
 ```
 
 This is a custom Jest transformer turning style imports into empty objects. In our tests, we does not need to import real CSS files.
