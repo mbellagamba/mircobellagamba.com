@@ -1,6 +1,6 @@
 ---
 title: "Testing Library Recipes - Choosing query"
-date: "2021-04-26"
+date: "2021-05-05"
 description: "Which query should I use? Testing Library provides many query methods but it's important to choose the right one for your context."
 tags: "javascript testing webdev"
 ---
