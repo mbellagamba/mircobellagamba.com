@@ -1,3 +1,4 @@
+import { Link } from "gatsby"
 import React from "react"
 import * as styles from "./cookie-consent.module.css"
 
@@ -17,8 +18,7 @@ const CookieConsent = () => {
     <div className={styles.banner} onClick={ev => ev.stopPropagation()}>
       <p>
         This site and some selected partners use cookies or similar technologies
-        as specified in the{" "}
-        <a href="https://automattic.com/cookies/">cookie policy</a>. You can
+        as specified in the <Link to="/privacy">Privacy policy</Link>. You can
         consent to the use of these technologies by closing this information,
         continuing to browse this page, interacting with a link or button
         outside this information or continuing to browse in any other way.

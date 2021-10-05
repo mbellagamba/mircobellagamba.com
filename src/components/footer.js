@@ -104,12 +104,13 @@ export default function Footer() {
         }}
       >
         <small>
-          © {new Date().getFullYear()} {site.siteMetadata.author.name} , Made
+          © {new Date().getFullYear()} {site.siteMetadata.author.name}, Made
           with{" "}
           <span title="<3" aria-label="love">
             &lt;0011
           </span>{" "}
-          using <a href="https://gatsbyjs.org/">Gatsby</a>
+          using <a href="https://gatsbyjs.org/">Gatsby</a> -{" "}
+          <Link to="/privacy">Privacy policy</Link>
         </small>
       </div>
     </div>
