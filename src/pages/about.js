@@ -149,14 +149,13 @@ const certifications = [
     subtitle: "Microsoft",
     icon: "microsoft",
     period: "Jan 2019",
-    url:
-      "https://www.youracclaim.com/badges/901ce614-1327-4b5e-bbd1-4781d74ae12f/public_url",
+    url: "https://www.youracclaim.com/badges/901ce614-1327-4b5e-bbd1-4781d74ae12f/public_url",
   },
   {
     title: "License to practice as Engineer",
     subtitle: "Ordine degli Ingegneri di Ancona",
     icon: "oia",
     period: "Sep 2016",
-    url: "https://ordineingegneri.ancona.it/albo",
+    url: "https://www.ordineingegneri.ancona.it/albo",
   },
 ]
