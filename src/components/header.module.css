@@ -29,10 +29,13 @@
   left: 0;
   right: 0;
   background-color: var(--bg);
+  transform-origin: top right;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .menu[data-menu-open="false"] {
-  display: none;
+  opacity: 0;
+  transform: scale(0, 0);
 }
 
 @media screen and (min-width: 600px) {
@@ -40,6 +43,8 @@
     display: flex;
     flex-direction: row;
     position: static;
+    opacity: 1;
+    transform: scale(1, 1);
   }
 }
 

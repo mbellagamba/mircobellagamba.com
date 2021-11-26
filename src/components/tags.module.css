@@ -12,6 +12,7 @@
   border: 1px solid var(--primary);
   border-radius: 0.4rem;
   background-color: var(--surface);
+  margin-top: var(--space-xs);
   margin-right: var(--space-xs);
   margin-bottom: 0;
   font-weight: 600;
