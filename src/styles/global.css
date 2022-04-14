@@ -97,12 +97,12 @@ blockquote {
   font-style: italic;
 }
 
-code {
-  font-size: 0.9rem;
+.gatsby-highlight pre {
+  border-radius: 0.5rem;
 }
 
-.gatsby-highlight pre {
-  border-radius: 0.25rem;
+pre[class*="language-"], code[class*="language-"] {
+  font-size: 1rem;
 }
 
 .big-section {
