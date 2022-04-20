@@ -24,6 +24,7 @@ module.exports = {
       twitter: `mircoBellaG`,
       linkedin: `mirco-bellagamba`,
       github: `mbellagamba`,
+      dev: `mbellagamba`,
     },
   },
   plugins: [

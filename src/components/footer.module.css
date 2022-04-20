@@ -17,6 +17,7 @@
 
 .socials {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   margin-top: var(--space-l);
   margin-bottom: var(--space-m);
@@ -52,6 +53,10 @@
 
 .social[aria-label="linkedin"] {
   background-color: var(--bg-linkedin);
+}
+
+.social[aria-label="devcommunity"] {
+  background-color: var(--bg-github);
 }
 
 .social > svg {
