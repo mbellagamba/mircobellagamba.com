@@ -88,7 +88,7 @@ If you use a different setup, this guide could still work but you probably need 
 
 First of all, let's install required npm packages.
 
-```
+```shell
 npm i -D jest babel-jest @testing-library/jest-dom @testing-library/react @testing-library/user-event
 ```
 
