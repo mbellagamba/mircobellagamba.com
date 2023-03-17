@@ -1,0 +1,44 @@
+---
+layout: layouts/base.njk
+eleventyNavigation:
+  key: About Me
+  order: 3
+---
+
+<section class="section section--visible">
+  <h1 class="section__title">About me.</h1>
+  <div class="section__card">
+    <p>I am an experienced web and mobile engineer with a broad development background
+    from JavaScript to C#. I have worked with front-end web development, distributed systems, 
+    mobile apps and cloud environments. My greatest interest is software architectures 
+    and how to build software that is easy to evolve, scale and maintain. 
+    This passion has led me to experiment several technologies, development methodologies 
+    and to improve my decision making skills.</p>
+  </div>
+</section>
+
+<section class="section section--visible">
+  <h1 class="section__title">Work experiences.</h1>
+  <div class="section__card">
+    {% set experiences = workExperiences %}
+    {% include "experiences.njk" %}
+  </div>
+</section>
+
+<section class="section section--visible">
+  <h1 class="section__title">Education.</h1>
+  <div class="section__card">
+    {% set experiences = education %}
+    {% include "experiences.njk" %}
+  </div>
+</section>
+
+<section class="section section--visible">
+  <h1 class="section__title">Certifications.</h1>
+  <div class="section__card">
+    {% set experiences = certifications %}
+    {% include "experiences.njk" %}
+  </div>
+</section>
+
+{% include "connect.njk" %}

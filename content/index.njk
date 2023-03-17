@@ -7,17 +7,23 @@ numberOfLatestPostsToShow: 3
 ---
 {% set postsCount = collections.posts | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
-<h1>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h1>
+<section class="section section--visible">
+    <h1 class="section__title">
+			Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}.
+		</h1>
+  <div class="section__card">
+		{% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
+		{% set postslistCounter = postsCount %}
+		{% include "postslist.njk" %}
 
-{% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
-{% set postslistCounter = postsCount %}
-{% include "postslist.njk" %}
+		{% set morePosts = postsCount - numberOfLatestPostsToShow %}
+		{% if morePosts > 0 %}
+			<p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="/blog/">the archive</a>.</p>
+		{% endif %}
+  </div>
+</section>
 
-{% set morePosts = postsCount - numberOfLatestPostsToShow %}
-{% if morePosts > 0 %}
-<p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="/blog/">the archive</a>.</p>
-{% endif %}
-
+{% include "connect.njk" %}
 {# List every content page in the project #}
 {#
 <ul>

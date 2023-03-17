@@ -4,7 +4,13 @@ eleventyNavigation:
   key: Archive
   order: 2
 ---
-<h1>Archive</h1>
 
-{% set postslist = collections.posts %}
-{% include "postslist.njk" %}
+<section class="section section--visible">
+  <h1 class="section__title">Archive.</h1>
+  <div class="section__card">
+    {% set postslist = collections.posts %}
+    {% include "postslist.njk" %}
+  </div>
+</section>
+
+{% include "connect.njk" %}

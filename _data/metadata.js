@@ -7,5 +7,12 @@ module.exports = {
 		name: "Mirco Bellagamba",
 		email: "mirco.bellag@gmail.com",
 		url: "https://mircobellagamba.com/about-me/",
+		role: "Software engineer",
+		social: {
+      twitter: `mircoBellaG`,
+      linkedin: `mirco-bellagamba`,
+      github: `mbellagamba`,
+      dev: `mbellagamba`,
+    },
 	},
 };

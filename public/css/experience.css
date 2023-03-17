@@ -1,0 +1,11 @@
+.article__header {
+  margin-bottom: 1rem;
+}
+
+.article__title {
+  margin-bottom: 0.5rem;
+}
+
+.article__subtitle {
+  color: var(--color-gray-90);
+}
