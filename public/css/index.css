@@ -179,6 +179,27 @@ header {
 	text-decoration: underline;
 }
 
+/* Footer */
+footer {
+	padding: 1rem;
+}
+
+.footer {
+	text-align: center;
+}
+
+.footer__links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.footer__blockquote {
+	font-style: italic;
+	margin: 1rem 0;
+}
+
 /* Posts list */
 .postlist {
 	list-style: none;
@@ -289,9 +310,16 @@ img {
 } */
 
 .section__title {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 500;
   margin-bottom: -1.5rem;
+	overflow-wrap: break-word;
+}
+
+@media screen and (min-width: 768px) {
+	.section__title {
+		font-size: 4rem;
+	}
 }
 
 .section__card {

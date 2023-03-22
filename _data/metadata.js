@@ -15,4 +15,5 @@ module.exports = {
       dev: `mbellagamba`,
     },
 	},
+	now: () => new Date(),
 };

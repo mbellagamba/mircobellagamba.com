@@ -52,7 +52,23 @@
 			{{ content | safe }}
 		</main>
 
-		<footer></footer>
+		<footer class="footer">
+			<div class="footer__links">
+				<a href="/">Home</a>
+				<a href="/blog/">Blog</a>
+				<a href="/about/">About me</a>
+			</div>
+			<blockquote class="footer__blockquote">
+				Any sufficiently advanced technology is indistinguishable from magic.
+        Arthur C. Clarke
+			</blockquote>
+			<small>
+				© {{ metadata.now().getFullYear() }} {{ metadata.author.name }},
+				Made with <span title="<3" aria-label="love">&lt;001</span>
+				using <a href="https://11ty.dev">Eleventy</a> -
+				<a href="/privacy">Privacy policy</a>
+			</small>
+		</footer>
 
 		<!-- Current page: {{ page.url | htmlBaseUrl }} -->
 	</body>
