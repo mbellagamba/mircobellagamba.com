@@ -44,7 +44,7 @@ The core concept is to apply a Strangler Pattern in order to gradually eliminate
 
 {% image "./strangler-pattern.png", "A strangler pattern schema" %}
 
-We followed the [Micro-frontends Decision Framework](https://medium.com/@lucamezzalira/micro-frontends-decisions-framework-ebcd22256513) as a guide for top-level architectural choices. This is a super-short summary of our decisions.
+We followed the [Micro-frontends Decision Framework](https://lucamezzalira.medium.com/micro-frontends-decisions-framework-ebcd22256513) as a guide for top-level architectural choices. This is a super-short summary of our decisions.
 
 1. **Definition**: vertical split. Every page displays a single micro-frontend and there’s an orchestration layer responsible for switching micro-frontends. We identified a subdomain with a type of user, so each micro-frontend is a micro-app serving a single type of user.
 2. **Composition**: client side. A tiny layer of JavaScript code is responsible for loading micro-frontends on the page. In our architecture, switching between micro-frontends is a residual use case because it can happen only for users with different roles, like both teacher and parent in the same school.

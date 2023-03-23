@@ -2,11 +2,19 @@
 permalink: /tags/
 layout: layouts/home.njk
 ---
-<h1>Tags</h1>
 
-<ul>
-{% for tag in collections.all | getAllTags | filterTagList %}
-	{% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-	<li><a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a></li>
-{% endfor %}
-</ul>
+<section class="section section--visible">
+	<h1 class="section__title">Tags.</h1>
+	<div class="section__card">
+		<ul>
+			{% for tag in collections.all | getAllTags | filterTagList %}
+				{% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+				<li>
+					<a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</section>
+
+{% include "connect.njk" %}
