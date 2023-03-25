@@ -71,5 +71,15 @@
 		</footer>
 
 		<!-- Current page: {{ page.url | htmlBaseUrl }} -->
+
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-W2E9LR5DLD"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-W2E9LR5DLD', { 'debug_mode':true });
+		</script>
 	</body>
 </html>
