@@ -1,28 +1,28 @@
 {%- css %}{% include "public/css/experience.css" %}{% endcss %}
 <ol reversed class="article__list" >
-  {% for experience in experiences | reverse %}
-    <li>
-      <article class="article">
-        {% image "../public/img/" + experience.icon + ".png", experience.title  + " logo" %}
-        <div class="article__content">
-          <div class="article__header">
-            <h3 class="article__title">
-              {% if experience.href %}
-              <a href="{{ experience.href }}" rel="noopener" target="_blank">
-                {{ experience.title }}
-              </a>
-              {% else %}
-                {{ experience.title }}
-              {% endif %}
-            </h3>
-            <div>{{ experience.subtitle }}</div>
-            <small class="article__subtitle">{{ experience.period }}</small>
-          </div>
-          <section>
-            <p class="article__text">{{ experience.content | safe }}</p>
-          </section>
-        </div>
-      </article>
-    </li>
-  {% endfor %}
+	{% for experience in experiences | reverse %}
+		<li>
+			<article class="article">
+				{% image "../public/img/" + experience.icon + ".png", experience.title + " logo" %}
+				<div class="article__content">
+					<div class="article__header">
+						<h3 class="article__title">
+							{% if experience.href %}
+								<a href="{{ experience.href }}" rel="noopener" target="_blank">
+									{{ experience.title }}
+								</a>
+							{% else %}
+								{{ experience.title }}
+							{% endif %}
+						</h3>
+						<div>{{ experience.subtitle }}</div>
+						<small class="article__subtitle">{{ experience.period }}</small>
+					</div>
+					<section>
+						<p class="article__text">{{ experience.content | safe }}</p>
+					</section>
+				</div>
+			</article>
+		</li>
+	{% endfor %}
 </ol>
