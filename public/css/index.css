@@ -82,13 +82,16 @@ li {
 
 a[href] {
 	color: var(--text-color-link);
+	border-color: var(--text-color-link);
 }
 a[href]:visited {
 	color: var(--text-color-link-visited);
+	border-color: var(--text-color-link-visited);
 }
 a[href]:hover,
 a[href]:active {
 	color: var(--text-color-link-active);
+	border-color: var(--text-color-link-active);
 }
 
 main {
@@ -254,6 +257,11 @@ footer {
 .postlist-item > .post-tag {
 	align-self: center;
 }
+.tag-badge {
+	border: 1px solid;
+	border-radius: 0.25rem;
+	padding: 0.25rem 0.5rem;
+}
 
 /* Tags list */
 .post-metadata {
@@ -327,4 +335,12 @@ img {
   border-radius: 1rem;
   margin-bottom: 2rem;
   padding: 2rem;
+}
+
+.textblock {
+	font-size: 3rem;
+}
+
+.textblock--highlighted {
+	color: var(--text-color-link);
 }
