@@ -1,0 +1,35 @@
+---
+pagination:
+  data: companies
+  size: 1
+  alias: company
+layout: layouts/home.njk
+eleventyComputed:
+  title: Projects at “{{ company.name }}”
+permalink: /projects/{{ company.name | slugify }}/
+---
+{%- css %}{% include "public/css/projects.css" %}{% endcss %}
+<section class="section section--visible">
+  <h1 class="section__title">Projects @{{ company.name }}.</h1>
+  <div class="section__card">
+    <ol reversed class="postlist">
+      {% for post in company.projects | reverse %}
+        <li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
+          <div class="project__header">
+            {% image "../public/img/" + post.icon, post.title + " logo" %}
+            <div class="project__header__content">
+              {% if post.url %}
+                <a href="{{ post.url }}" class="postlist-link">{{ post.title }}</a>
+              {% else %}
+                <span class="postlist-link">{{ post.title }}</span>
+              {% endif %}
+              <time class="postlist-date" datetime="{{ post.date | toDate | htmlDateString }}">{{ post.date | toDate | readableDate("LLLL yyyy") }}</time>
+            </div>
+          </div>
+          <p><small>{{ post.summary }}</small><br />{{ post.description }}</p>
+        </li>
+      {% endfor %}
+    </ol>
+    <p>Back to my <a href="/about">work experiences</a>.</p>
+  </div>
+</section>

@@ -1,0 +1,19 @@
+.project__header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 10% 1fr;
+  gap: 0.5rem;
+  margin: 0 0.5rem;
+}
+
+.project__header img {
+  border-radius: 0.5rem;
+}
+
+.project__header__content {
+  display: grid;
+}
+
+.project__header__content .postlist-link {
+  padding: 0;
+}

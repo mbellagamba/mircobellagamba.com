@@ -3,6 +3,7 @@ module.exports = {
 		{
 			title: "Software engineer",
 			subtitle: "Crea-D - Caldarola (MC), Italy",
+			projectsTitle: "Crea-D",
 			icon: "crea-d",
 			period: "Apr 2015 - Jun 2015",
 			content: `- Designed and developed a native Android app for local tourism. Thanks to this experience, I have a deep understanding of the Android OS API.
@@ -23,6 +24,7 @@ module.exports = {
 			title: "Software engineer",
 			subtitle: "Nautes - Jesi (AN), Italy",
 			icon: "nautes",
+			projectsTitle: "Nautes",
 			period: "Jan 2016 - Dec 2019",
 			content: `- Worked as full stack developer on several B2B software projects (React.js, Redux and .NET)
 			- Developed several iOS native apps and React Native apps
@@ -36,6 +38,7 @@ module.exports = {
 			title: "Front-end engineer",
 			subtitle: "Madisoft - Remote from Italy",
 			icon: "madisoft",
+			projectsTitle: "Madisoft",
 			period: "Jan 2020 - Present",
 			content: `- Leaded the transition from a monolithic frontend (jQuery) to a micro-frontends solution (React)
 			- Took part in the recruitment and selection process of candidates and helped improve it

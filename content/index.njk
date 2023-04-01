@@ -9,6 +9,7 @@ numberOfLatestPostsToShow: 3
 	Hi, I'm Mirco.
 	<br/>I enjoy crafting quality software for <span class="textblock--highlighted">people</span>.
 </p>
+<a href="/about">About me</a>
 {% set postsCount = collections.posts | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
 <section class="section section--visible">
@@ -22,23 +23,23 @@ numberOfLatestPostsToShow: 3
 
 		{% set morePosts = postsCount - numberOfLatestPostsToShow %}
 		{% if morePosts > 0 %}
-			<p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="/blog/">the archive</a>.</p>
+			<p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="/blog/">the blog</a>.</p>
 		{% endif %}
 	</div>
 </section>
 
 <section class="section section--visible">
-	<h1 class="section__title">Main tags.</h1>
+	<h1 class="section__title">Main topics.</h1>
 	<div class="section__card">
 		<ul class="post-metadata">
-			{% for tag in collections.all | getAllTags | filterTagList | limitToTen %}
+			{% for tag in collections.all | getAllTags | filterTagList | head(10) %}
 				{% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
 				<li>
 					<a href="{{ tagUrl }}" class="post-tag tag-badge">{{ tag }}</a>
 				</li>
 			{% endfor %}
 		</ul>
-		<p>See <a href="/tags/">all tags</a>.</p>
+		<p>See <a href="/tags/">all topics</a>.</p>
 	</div>
 </section>
 
