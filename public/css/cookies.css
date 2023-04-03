@@ -1,0 +1,35 @@
+@keyframes slidin {
+  from {transform: translateY(100%); }
+  to {transform: translateY(0); }
+}
+
+.cookies {
+  position: fixed;
+  bottom: 1rem;
+  right: 0.5rem;
+  left: 0.5rem;
+  background-color: var(--surface-color);
+  padding: 1rem;
+  border-radius: 0.25rem;
+  box-shadow: var(--shadow-elevation-medium);
+  animation-duration: 0.5s;
+  animation-name: slidin;
+  animation-timing-function: cubic-bezier(.22,.61,.36,1);
+}
+
+
+@media screen and (min-width: 768px) {
+  .cookies {
+    max-width: 40vw;
+    right: 2rem;
+    left: initial;
+  }
+}
+
+.cookies--hidden {
+  display: none;
+}
+
+.cookies__informative {
+  font-size: smaller;
+}

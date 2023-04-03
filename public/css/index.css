@@ -19,6 +19,13 @@
 	--text-color-link-visited: #17050F;
 
 	--syntax-tab-size: 2;
+
+  --shadow-color: 252deg 3% 27%;
+	--shadow-elevation-medium:
+		0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.36),
+		0.9px 1.6px 2.1px -0.8px hsl(var(--shadow-color) / 0.36),
+		2.3px 4.1px 5.3px -1.7px hsl(var(--shadow-color) / 0.36),
+		5.7px 10px 12.9px -2.5px hsl(var(--shadow-color) / 0.36);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -303,6 +310,35 @@ h2 + .header-anchor {
 img {
   max-width: 100%;
   height: auto;
+}
+
+/* Buttons */
+.btn {
+	background: none;
+	color: var(--text-color-link);
+	background-color: var(--color-gray-20);
+	border:none;
+	border-radius: 0.25rem;
+	padding: 0.5rem 1rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	transition: background-color 0.25s ease-out, color 0.25s ease-out;
+}
+
+.btn:hover, .btn:active {
+	color: var(--text-color-link-active);
+	background-color: var(--color-gray-50);
+}
+
+.btn--primary {
+	color: var(--background-color);
+	background-color: var(--text-color-link);
+}
+
+
+.btn--primary:hover, .btn--primary:active {
+	color: var(--background-color);
+	background-color: var(--text-color-link-active);
 }
 
 /* .section {

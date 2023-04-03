@@ -5,6 +5,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{{ title or metadata.title }}</title>
 		<meta name="description" content="{{ description or metadata.description }}">
+		<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+		<meta name="theme-color" content="#15202b" media="(prefers-color-scheme: dark)">
 
 		{#- Atom and JSON feeds included by default #}
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
@@ -33,6 +35,7 @@
 	</head>
 	<body>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
+		{% include "cookies.njk" %}
 
 		<header>
 			<a href="/" class="home-link">{{ metadata.title }}</a>
@@ -72,14 +75,6 @@
 
 		<!-- Current page: {{ page.url | htmlBaseUrl }} -->
 
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-W2E9LR5DLD"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-
-			gtag('config', 'G-W2E9LR5DLD', { 'debug_mode':true });
-		</script>
+		<script src="/js/cookies.js"></script>
 	</body>
 </html>
