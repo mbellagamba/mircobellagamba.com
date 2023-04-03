@@ -3,6 +3,7 @@ module.exports = {
 	url: "https://mircobellagamba.com/",
 	language: "en",
 	description: "Mirco Bellagamba builds high performance, interactive applications, using web technologies. Front-end and app engineer at Madisoft. He builds software for humans.",
+	image: "/img/cover.jpg",
 	author: {
 		name: "Mirco Bellagamba",
 		email: "mirco.bellag@gmail.com",

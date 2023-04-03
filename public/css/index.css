@@ -41,6 +41,8 @@
 
 		--background-color: #15202b;
 		--surface-color: #0e1720;
+
+  	--shadow-color: 252deg 16% 32%;
 	}
 }
 
@@ -316,7 +318,7 @@ img {
 .btn {
 	background: none;
 	color: var(--text-color-link);
-	background-color: var(--color-gray-20);
+	background-color: var(--background-color);
 	border:none;
 	border-radius: 0.25rem;
 	padding: 0.5rem 1rem;
