@@ -5,14 +5,9 @@ eleventyNavigation:
   order: 1
 numberOfLatestPostsToShow: 3
 ---
-<p class="textblock">
-	Hi, I'm Mirco.
-	<br/>I enjoy crafting quality software for <span class="textblock--highlighted">people</span>.
-</p>
-<a href="/about">About me</a>
 {% set postsCount = collections.posts | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
-<section class="section section--visible">
+<section class="section">
 	<h1 class="section__title">
 			Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}.
 		</h1>
@@ -28,8 +23,8 @@ numberOfLatestPostsToShow: 3
 	</div>
 </section>
 
-<section class="section section--visible">
-	<h1 class="section__title">Main topics.</h1>
+<section class="section">
+	<h2 class="section__title">Main topics.</h2>
 	<div class="section__card">
 		<ul class="post-metadata">
 			{% for tag in collections.all | getAllTags | filterTagList | head(10) %}

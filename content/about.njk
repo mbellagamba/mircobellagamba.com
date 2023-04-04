@@ -5,7 +5,7 @@ eleventyNavigation:
   order: 3
 ---
 
-<section class="section section--visible">
+<section class="section">
   <h1 class="section__title">About me.</h1>
   <div class="section__card">
     <p>I am an experienced web and mobile engineer with a broad development background
@@ -14,27 +14,32 @@ eleventyNavigation:
     and how to build software that is easy to evolve, scale and maintain. 
     This passion has led me to experiment several technologies, development methodologies 
     and to improve my decision making skills.</p>
+    <ul style="font-size:smaller">
+      <li><strong>Technologies I master</strong>: JavaScript, TypeScript, React.js, HTML, CSS, C#, ASP.NET Core, React Native, SQL</li>
+      <li><strong>Technologies I'm confortable with</strong>: Node.JS, Java (Android), Swift (iOS), AWS</li>
+      <li><strong>Technologies I used</strong>: PHP, Laravel, Vue.js, Angular.js</li>
+    </ul>
   </div>
 </section>
 
-<section class="section section--visible">
-  <h1 class="section__title">Work experiences.</h1>
+<section class="section">
+  <h2 class="section__title">Work experiences.</h2>
   <div class="section__card">
     {% set experiences = workExperiences %}
     {% include "experiences.njk" %}
   </div>
 </section>
 
-<section class="section section--visible">
-  <h1 class="section__title">Education.</h1>
+<section class="section">
+  <h2 class="section__title">Education.</h2>
   <div class="section__card">
     {% set experiences = education %}
     {% include "experiences.njk" %}
   </div>
 </section>
 
-<section class="section section--visible">
-  <h1 class="section__title">Certifications.</h1>
+<section class="section">
+  <h2 class="section__title">Certifications.</h2>
   <div class="section__card">
     {% set experiences = certifications %}
     {% include "experiences.njk" %}

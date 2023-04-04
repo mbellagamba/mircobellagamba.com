@@ -343,18 +343,6 @@ img {
 	background-color: var(--text-color-link-active);
 }
 
-/* .section {
-  opacity: 0;
-  transform: translateY(4rem);
-  transition: transform 4s 0.25s cubic-bezier(0, 1, 0.3, 1),
-    opacity 0.3s 0.25s ease-out;
-}
-
-.section--visible {
-  opacity: 1;
-  transform: translateY(0);
-} */
-
 .section__title {
   font-size: 3rem;
   font-weight: 500;
@@ -375,10 +363,15 @@ img {
   padding: 2rem;
 }
 
-.textblock {
-	font-size: 3rem;
+.mainsentence {
+	font-size: 2rem;
 }
 
-.textblock--highlighted {
+.mainsentence__title {
+	font-size: 3rem;
+	display: block;
+}
+
+.mainsentence--highlighted {
 	color: var(--text-color-link);
 }
