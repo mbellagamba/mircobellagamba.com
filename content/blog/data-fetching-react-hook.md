@@ -121,7 +121,7 @@ export function useFetch(url) {
 }
 ```
 
-The `useFetch` hook is a useful abstraction and it can be easily shared among the components of the app. The request status depends on the single `status` variable, instead of three. The `subscribed` variable prevents a component update on an unmounted component, when the unmount event happens before the request completion.
+The `useFetch` hook is a useful abstraction, and it can be easily shared among the components of the app. The request status depends on the single `status` variable, instead of three. The `subscribed` variable prevents a component update on an unmounted component, when the unmount event happens before the request completion.
 No one is happy to see this warning in browser console.
 
 > Warning: Can’t call setState (or forceUpdate) on an unmounted component. This is a no-op, but it indicates a memory leak in your application. To fix, cancel all subscriptions and asynchronous tasks in the componentWillUnmount method.
@@ -233,7 +233,7 @@ export function reducer<T>(
 }
 ```
 
-Then it could be useful to define an helper function with proper typing for each request, instead of using the hook directly in components. The _topics_ request would be like this.
+Then it could be useful to define a helper function with proper typing for each request, instead of using the hook directly in components. The _topics_ request would be like this.
 
 ```typescript
 function useTopics(): RequestState<Topic[]> {
@@ -243,7 +243,7 @@ function useTopics(): RequestState<Topic[]> {
 
 The Union type enforces us to check the status of the response before accessing any other properties. Writing `res.data` is allowed only if the language is sure that the status is "success" in the same scope. So, thanks to TypeScript, we can forget about mistakes like `Uncaught TypeError: Cannot read property 'map' of undefined`.
 
-## Bonus #2: Testing tips
+## Bonus #2: Testing tips
 
 The `useFetch` hook could help us to simplify unit tests. In fact, we can spy on the hook and return a proper _test double_. Testing the component becomes easier because the _hook spy_ hides the asynchronous behavior of fetch requests, serving directly the response.
 The stub let us reason about the component behavior and the test expectation without worrying about async execution.
@@ -280,7 +280,7 @@ The useFetch hook is a handy utility to retrieve data from the server and to man
 - The custom hook can be easily modified to work with any asynchronous task, i.e. with every function returning a `Promise`. For instance, its signature can be like the following.
 
 ```typescript
-function useAsync<T>(task: Promise<T> | () => Promise<T>): AsyncState<T>`
+function useAsync<T>(task: Promise<T> | () => Promise<T>): AsyncState<T>
 ```
 
 - It is easy to replace the native fetch with [Axios](https://github.com/axios/axios). There's only need to remove the code that checks if the response is successful and parse the JSON response body because Axios does it internally.

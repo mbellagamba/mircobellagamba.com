@@ -24,7 +24,7 @@ For the purpose of the article, we can consider our initial architecture as a cl
 - **Easier maintenance**: each micro-frontend module should be developed in isolation and the developer has lower cognitive load when developing a feature or debugging. Each micro-frontend has a separate and decoupled codebase from the others and each of them represents a business subdomain. For this reason it’s easier for a developer to become a (sub)domain expert.
 - **Autonomous teams**: each team should be responsible for making the right choices for its module.
 - **Technology independence**: the legacy framework and tooling should coexist with modern technologies allowing to evolve the codebase without struggling.
-- **Scalable development**: each micro-frontends should be independent from each other so each team could deploy at its own pace, increasing the development speed.
+- **Scalable development**: each micro-frontends should be independent of each other so each team could deploy at its own pace, increasing the development speed.
 
 ## Challenges
 
@@ -149,7 +149,5 @@ It could seem counterproductive to share something between micro-frontends, inst
 At the time of writing this article, we have completed the migration of the parents and pupils area and we have noticed an increase in the use of this section by our users. This for us means that the update has been well received and has fixed at least some of the usability issues that made it less user-friendly. Secondly, we have seen a relative reduction in the cost of our cloud architecture due to adopting the API model compared to generating HTML on our main servers. Infrastructure costs have grown in absolute terms due to two factors. Our user base is constantly growing, more and more schools are choosing to use Nuvola as a management software and as an electronic register. The advent of the COVID-19 pandemic has generated greater use of our software which has represented the official software solution for communicating with schools during the distance learning period.
 
 Given the excellent results obtained, we are already working on the migration of the other parts of the software using the same principles already implemented. Surely Webpack Module Federation will play a key role in this process and will be used for an even simpler and more immediate orchestration.
-
-Grazie per aver letto fino a questo momento, condividerò maggiori dettagli del nostro percorso in post futuri. Continuate a seguirci nel nostro blog.
 
 By Mirco Bellagamba, Software engineer, front end specialist.
