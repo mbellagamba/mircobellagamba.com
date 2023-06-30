@@ -1,5 +1,30 @@
 const ACCEPTS_COOKIES_KEY = "web-accepts-cookies";
 const GOOGLE_TAG_ID = "G-W2E9LR5DLD";
+const COOKIES_EXPIRY_IN_DAYS = 30;
+
+function setCookie(key, value, durationInDays) {
+	document.cookie =
+		`${key}=${value}; ` +
+		(durationInDays ? `expires=${expiryFromDurationInDays(durationInDays)}; ` : "") +
+		"path=/; samesite=Lax; secure";
+}
+
+function getCookie(key) {
+	return document.cookie
+		.split(";")
+		.find((row) => row.trim().startsWith(`${key}=`))
+		?.split("=")[1];
+}
+
+function isCookieSet(key) {
+	return document.cookie.split(";").some((cookie) => cookie.trim().startsWith(key));
+}
+
+function expiryFromDurationInDays(days) {
+	let expires = new Date();
+	expires.setDate(expires.getDate() + days);
+	return expires;
+}
 
 function appendScript({ src, content, async }) {
 	const script = document.createElement("script");
@@ -41,23 +66,25 @@ function askPermissionForAnalytics() {
 }
 
 function isCookiesPermissionAsked() {
-	return document.cookie
-		.split(";")
-		.some((cookie) => cookie.startsWith(ACCEPTS_COOKIES_KEY));
+	return isCookieSet(ACCEPTS_COOKIES_KEY);
 }
 
 function isCookiesAccepted() {
-	return document.cookie.split(";").includes(`${ACCEPTS_COOKIES_KEY}=1`);
+	return getCookie(ACCEPTS_COOKIES_KEY) === "1";
+}
+
+function setCookiesPreferences(value) {
+	setCookie(ACCEPTS_COOKIES_KEY, value, COOKIES_EXPIRY_IN_DAYS);
 }
 
 function acceptsCookies() {
-	document.cookie = `${ACCEPTS_COOKIES_KEY}=1`;
+	setCookiesPreferences("1");
 	addAnalytics();
 	hideCookiesAlert();
 }
 
 function denyCookies() {
-	document.cookie = `${ACCEPTS_COOKIES_KEY}=0`;
+	setCookiesPreferences("0");
 	hideCookiesAlert();
 }
 

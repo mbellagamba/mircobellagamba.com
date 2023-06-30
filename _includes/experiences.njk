@@ -22,7 +22,11 @@
 						<p class="article__text">{{ experience.content | safe }}</p>
 					</section>
 					{% if experience.projectsTitle %}
-						<p>See projects @<a href="/projects/{{ experience.projectsTitle | slugify }}">{{ experience.projectsTitle }}</a></p>
+						<p>See projects @
+							<a href="/projects/{{ experience.projectsTitle | slugify }}">
+								<strong>{{ experience.projectsTitle }}</strong>
+							</a>
+						</p>
 					{% endif %}
 				</div>
 			</article>

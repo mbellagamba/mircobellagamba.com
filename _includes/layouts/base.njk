@@ -11,7 +11,7 @@
 
     {% include "opengraph.njk" %}
 		{% include "twittercard.njk" %}
-	
+
 		{#- Atom and JSON feeds included by default #}
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
 		<link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ metadata.title }}">
@@ -38,6 +38,7 @@
 		<style>{% getBundle "css" %}</style>
 	</head>
 	<body>
+		<script src="/js/bundle.js"></script>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
 		{% include "cookies.njk" %}
 
@@ -53,6 +54,8 @@
 				{%- endfor %}
 				</ul>
 			</nav>
+			<span class="flexible-space" ></span>
+			<button id="theme-toggle-button" aria-label="toggle theme">Toggle theme</button>
 		</header>
 
 		<main id="skip">
@@ -78,7 +81,5 @@
 		</footer>
 
 		<!-- Current page: {{ page.url | htmlBaseUrl }} -->
-
-		<script src="/js/cookies.js"></script>
 	</body>
 </html>
