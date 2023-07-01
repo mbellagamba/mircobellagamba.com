@@ -5,7 +5,7 @@ pagination:
   alias: company
 layout: layouts/home.njk
 eleventyComputed:
-  title: Projects at “{{ company.name }}”
+  title: Projects at “{{ company.name }}” | Mirco Bellagamba
 permalink: /projects/{{ company.name | slugify }}/
 ---
 {%- css %}{% include "public/css/projects.css" %}{% endcss %}
