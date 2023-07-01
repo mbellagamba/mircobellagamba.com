@@ -246,8 +246,7 @@ footer {
 /* Posts list */
 .postlist {
 	list-style: none;
-	padding: 0;
-	padding-left: 1.5rem;
+	padding: 0 0 0 1.5rem;
 }
 
 .postlist-item {
@@ -359,9 +358,8 @@ img {
 
 /* Buttons */
 .btn {
-	background: none;
+	background: var(--background-color);
 	color: var(--text-color-link);
-	background-color: var(--background-color);
 	border: none;
 	border-radius: 0.25rem;
 	padding: 0.5rem 1rem;
