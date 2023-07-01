@@ -96,9 +96,19 @@ function enableCookiesClickListeners() {
 	denyButton.addEventListener("click", denyCookies);
 }
 
+function unregisterServiceWorker() {
+	navigator.serviceWorker.getRegistrations().then(function(registrations) {
+		for(let registration of registrations) {
+			registration.unregister();
+		}
+	});
+
+}
+
 function initCookies() {
 	enableCookiesClickListeners();
 	askPermissionForAnalytics();
+	unregisterServiceWorker();
 }
 
 window.addEventListener("load", initCookies);
