@@ -22,8 +22,8 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addWatchTarget("content/**/*.{svg,webp,png,jpeg}");
 
 	// App plugins
-	eleventyConfig.addPlugin(require("./eleventy.config.drafts.js"));
-	eleventyConfig.addPlugin(require("./eleventy.config.images.js"));
+	eleventyConfig.addPlugin(require("./_11ty/drafts.js"));
+	eleventyConfig.addPlugin(require("./_11ty/images.js"));
 
 	// Official plugins
 	eleventyConfig.addPlugin(pluginRss);
