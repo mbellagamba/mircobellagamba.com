@@ -81,6 +81,29 @@ module.exports = function (eleventyConfig) {
 		);
 	});
 
+	// Cache busting
+	eleventyConfig.addFilter(
+		"bust",
+		(function () {
+			const fileVersions = {};
+			return (url) => {
+				const [urlPart, paramPart] = url.split("?");
+				const params = new URLSearchParams(paramPart || "");
+				const relativeUrl =
+					urlPart.charAt(0) == "/" ? urlPart.substring(1) : urlPart;
+
+				let version = fileVersions[relativeUrl];
+				if (!version) {
+					version = DateTime.now().toFormat("X");
+					fileVersions[relativeUrl] = version;
+				}
+				params.set("v", version);
+
+				return `${urlPart}?${params}`;
+			};
+		})()
+	);
+
 	// Customize Markdown library settings:
 	eleventyConfig.amendLibrary("md", (mdLib) => {
 		mdLib.use(markdownItAnchor, {
