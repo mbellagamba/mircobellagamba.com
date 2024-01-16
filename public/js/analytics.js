@@ -25,7 +25,10 @@ gtag('config', '${GOOGLE_TAG_ID}');`,
 
 function hideCookiesAlert() {
 	const cookiesAlert = document.querySelector(".cookies");
-	cookiesAlert.classList.add("cookies--hidden");
+	cookiesAlert.classList.add("cookies--slideout");
+	setTimeout(() => {
+		cookiesAlert.classList.add("cookies--hidden");
+	}, 400);
 }
 
 function showCookiesAlert() {
@@ -74,5 +77,5 @@ function enableCookiesClickListeners() {
 
 function initAnalytics() {
 	enableCookiesClickListeners();
-	askPermissionForAnalytics()
+	askPermissionForAnalytics();
 }

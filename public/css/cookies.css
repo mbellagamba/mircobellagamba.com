@@ -1,35 +1,48 @@
-@keyframes slidin {
-  from {transform: translateY(100%); }
-  to {transform: translateY(0); }
+@keyframes slidein {
+	from {
+		transform: translateY(100%);
+	}
+	to {
+		transform: translateY(0);
+	}
+}
+@keyframes slideout {
+	from {
+		transform: translateY(0);
+	}
+	to {
+		transform: translateY(100%);
+	}
 }
 
 .cookies {
-  position: fixed;
-  bottom: 1rem;
-  right: 0.5rem;
-  left: 0.5rem;
-  background-color: var(--surface-color);
-  padding: 1rem;
-  border-radius: 0.25rem;
-  box-shadow: var(--shadow-elevation-medium);
-  animation-duration: 0.5s;
-  animation-name: slidin;
-  animation-timing-function: cubic-bezier(.22,.61,.36,1);
+	position: fixed;
+	bottom: 1rem;
+	right: 0.5rem;
+	left: 0.5rem;
+	background-color: var(--surface-color);
+	padding: 1rem;
+	border-radius: 0.25rem;
+	box-shadow: var(--shadow-elevation-medium);
+	animation: slidein 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
+.cookies--slideout {
+	animation: slideout 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
 
 @media screen and (min-width: 768px) {
-  .cookies {
-    max-width: 40vw;
-    right: 2rem;
-    left: initial;
-  }
+	.cookies {
+		max-width: 40vw;
+		right: 2rem;
+		left: initial;
+	}
 }
 
 .cookies--hidden {
-  display: none;
+	display: none;
 }
 
 .cookies__informative {
-  font-size: smaller;
+	font-size: smaller;
 }
