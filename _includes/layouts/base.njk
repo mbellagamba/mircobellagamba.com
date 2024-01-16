@@ -38,7 +38,7 @@
 		<style>{% getBundle "css" %}</style>
 	</head>
 	<body>
-		<script src="/js/critical.js"></script>
+		<script src="{{ '/js/critical.js' | url | bust }}" async></script>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
 		{% include "cookies.njk" %}
 
@@ -80,7 +80,7 @@
 			</small>
 		</footer>
 
-		<script src="/js/bundle.js"></script>
+		<script src="{{ '/js/bundle.js' | url | bust }}" defer></script>
 		<!-- Current page: {{ page.url | htmlBaseUrl }} -->
 	</body>
 </html>
