@@ -5,14 +5,12 @@
 		<div class="connect">
 			<div class="connect__container">
 				<div class="connect__container">
-					<h2 class="connect__name">
-						{{ metadata.author.name }}
-					</h2>
+					<h2 class="connect__name">{{ metadata.author.name }}</h2>
 					<h3 class="connect__role">{{ metadata.author.role }}</h3>
 					<small>Ancona, Italy</small>
-					<a href="mailto:{{ metadata.author.email }}">
-						{{ metadata.author.email }}
-					</a>
+					<strong class="connect__email">
+						{% for part in metadata.author.emailParts %}{{ part }}<span class="connect__email__obfuscate">null</span>{% endfor %}
+					</strong>
 				</div>
 				<div class="connect__socials">
 					<a
