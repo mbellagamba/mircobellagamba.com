@@ -244,13 +244,13 @@ Each context limits update scope, ensuring only relevant components re-render. W
 
 This refactoring mirrors the concept of function composition, but applied to object composition.
 
-# What’s next: React Compiler and Automatic Optimizations
+## What’s next: React Compiler and Automatic Optimizations
 
 The future of React rendering looks even brighter with the introduction of the React Compiler (previously known as React Forget). This upcoming feature promises to automate many of the optimizations currently achieved with hooks like `useMemo` and useCallback. The compiler will analyze your component code and potentially inject optimizations to reduce unnecessary re-renders and improve performance. While the exact release date is still under development, this is a significant step towards a more streamlined and performant React development experience.
 
 **Keep in mind**: While the React Compiler will likely simplify optimization tasks, understanding the fundamentals of reference values and memoization will remain valuable for React developers. This knowledge will help you write cleaner and more efficient code, and make informed decisions when to leverage the compiler’s capabilities.
 
-# Final advices
+## Final advices
 
 While waiting for React Compiler, let’s optimize components following principles that [React team suggests](https://react.dev/reference/react/memo#should-you-add-memo-everywhere) that will be valuable also in future.
 
