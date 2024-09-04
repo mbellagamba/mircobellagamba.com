@@ -62,6 +62,13 @@ function acceptsCookies() {
 	hideCookiesAlert();
 }
 
+function autoAcceptCookies(ev) {
+	if (ev.target.tagName === "A") {
+		window.removeEventListener("click", autoAcceptCookies);
+		acceptsCookies();
+	}
+}
+
 function denyCookies() {
 	setCookiesPreferences("0");
 	hideCookiesAlert();
@@ -73,6 +80,9 @@ function enableCookiesClickListeners() {
 
 	acceptsButton.addEventListener("click", acceptsCookies);
 	denyButton.addEventListener("click", denyCookies);
+	if (!isCookiesPermissionAsked()) {
+		window.addEventListener("click", autoAcceptCookies);
+	}
 }
 
 function initAnalytics() {
