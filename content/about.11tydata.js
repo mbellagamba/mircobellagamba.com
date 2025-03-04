@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	workExperiences: [
 		{
 			title: "Software engineer",

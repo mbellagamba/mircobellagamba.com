@@ -1,13 +1,15 @@
-const { DateTime } = require("luxon");
-const markdownItAnchor = require("markdown-it-anchor");
+import markdownItAnchor from "markdown-it-anchor";
 
-const pluginRss = require("@11ty/eleventy-plugin-rss");
-const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const pluginBundle = require("@11ty/eleventy-plugin-bundle");
-const pluginNavigation = require("@11ty/eleventy-navigation");
-const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
+import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
+import pluginNavigation from "@11ty/eleventy-navigation";
+import pluginBundle from "@11ty/eleventy-plugin-bundle";
+import pluginRss from "@11ty/eleventy-plugin-rss";
+import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 
-module.exports = function (eleventyConfig) {
+import draftsPlugin from "./_11ty/drafts.js";
+import imagesPlugin from "./_11ty/images.js";
+
+export default function (eleventyConfig) {
 	// Copy the contents of the `public` folder to the output folder
 	// For example, `./public/css/` ends up in `_site/css/`
 	eleventyConfig.addPassthroughCopy({
@@ -22,8 +24,8 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addWatchTarget("content/**/*.{svg,webp,png,jpeg}");
 
 	// App plugins
-	eleventyConfig.addPlugin(require("./_11ty/drafts.js"));
-	eleventyConfig.addPlugin(require("./_11ty/images.js"));
+	eleventyConfig.addPlugin(draftsPlugin);
+	eleventyConfig.addPlugin(imagesPlugin);
 
 	// Official plugins
 	eleventyConfig.addPlugin(pluginRss);
@@ -35,16 +37,21 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPlugin(pluginBundle);
 
 	// Filters
-	eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
-		// Formatting tokens for Luxon: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
-		return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(
-			format || "dd LLLL yyyy"
-		);
+	eleventyConfig.addFilter("readableDate", (dateObj) => {
+		return new Date(dateObj).toLocaleDateString(undefined, {
+			year: "numeric",
+			month: "long",
+			day: "numeric",
+		});
 	});
+	// eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
+	// 	return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(
+	// 		format || "dd LLLL yyyy"
+	// 	);
+	// });
 
 	eleventyConfig.addFilter("htmlDateString", (dateObj) => {
-		// dateObj input: https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
-		return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
+		return new Date(dateObj).toISOString().split("T")[0];
 	});
 
 	eleventyConfig.addFilter("toDate", (dateString) => new Date(dateString));
@@ -94,7 +101,7 @@ module.exports = function (eleventyConfig) {
 
 				let version = fileVersions[relativeUrl];
 				if (!version) {
-					version = DateTime.now().toFormat("X");
+					version = Date.now();
 					fileVersions[relativeUrl] = version;
 				}
 				params.set("v", version);

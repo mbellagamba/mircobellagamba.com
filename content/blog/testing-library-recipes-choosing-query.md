@@ -209,7 +209,7 @@ const username = screen.getByDisplayValue("mircoBellaG");
 
 Pick [`…ByAltText`](https://testing-library.com/docs/queries/byalttext).
 
-This method is useful to get elements supporting `alt` text (`img`, `area` and `input`).
+This method is useful to get elements supporting `alt` text (`img`, `area` and `input`).
 
 ```javascript
 import { screen } from "@testing-library/react";

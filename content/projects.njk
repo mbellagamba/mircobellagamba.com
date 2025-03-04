@@ -23,7 +23,7 @@ permalink: /projects/{{ company.name | slugify }}/
               {% else %}
                 <span class="postlist-link">{{ post.title }}</span>
               {% endif %}
-              <time class="postlist-date" datetime="{{ post.date | toDate | htmlDateString }}">{{ post.date | toDate | readableDate("LLLL yyyy") }}</time>
+              <time class="postlist-date" datetime="{{ post.date | toDate | htmlDateString }}">{{ post.date | toDate | readableDate }}</time>
             </div>
           </div>
           <p><small>{{ post.summary }}</small><br />{{ post.description }}</p>
