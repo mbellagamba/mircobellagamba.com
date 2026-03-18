@@ -11,7 +11,7 @@ tags:
 Uploading and downloading images is a very common feature in modern web applications but exchanging files between client and server can quickly become a high resource consuming task. We must also consider that most Internet traffic comes from mobile devices, so we can expect users to upload photos taken with their phones. Those files can be very heavy (> 10MB) because of the ever increasing camera resolution on new mobile devices.
 
 {% image "./kyle-hinkson-xyXcGADvAwE-unsplash-920x460.jpg", "Baloons picture" %}
-Photo by [Kyle Hinkson](https://unsplash.com/@kajhinkson?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/balloon?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+Photo by Kyle Hinkson on [Unsplash](https://unsplash.com/s/photos/balloon?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 Sharing images in your platform means that users upload their photos to your storage server and then other users download those photos to use them somehow. This task involves much more resources compared to storing a new record in the database. We can expect an higher cost in terms of:
 
@@ -94,7 +94,7 @@ canvas.toBlob(
 		// Handle the compressed image
 	},
 	mimeType,
-	quality
+	quality,
 );
 ```
 
@@ -172,7 +172,7 @@ input.onchange = function (ev) {
 				displayInfo("Compressed file", blob);
 			},
 			MIME_TYPE,
-			QUALITY
+			QUALITY,
 		);
 		document.getElementById("root").append(canvas);
 	};

@@ -50,7 +50,6 @@ export default {
 						"An HR tech platform that allows top managers to share videos and receive feedbacks",
 					tags: "c-sharp aspnetcore aws",
 					icon: "imprinting.png",
-					url: "https://www.humananalyticslabs.com/",
 					description: `I designed and developed the AWS cloud serverless architecture made of C# lambda functions. Data is stored on DynamoDB, files and videos on S3. Videos are compressed using Elastic Transcoder.`,
 				},
 				{
@@ -60,7 +59,6 @@ export default {
 						"Tour operator app that allows you to connect with your travel organizer and other travelers",
 					tags: "swift ios xcode",
 					icon: "esitur.png",
-					url: "https://apps.apple.com/it/app/esitur/id993606471",
 					description: `I developed the native iOS app, using the Swift language and iOS Storyboards. Push notifications, image sharing and real time chat are some of the most interesting app capabilities.`,
 				},
 				{

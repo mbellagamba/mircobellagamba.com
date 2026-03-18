@@ -59,7 +59,7 @@ test("should show the product detail", async () => {
 ```javascript
 // ❌
 const submitButton = await waitFor(() =>
-	screen.getByRole("button", { name: /submit/i })
+	screen.getByRole("button", { name: /submit/i }),
 );
 // ✅
 const submitButton = await screen.findByRole("button", { name: /submit/i });
@@ -164,19 +164,6 @@ const username = screen.getByLabelText("Username");
 const password = screen.getByLabelText("Password");
 ```
 
-### else if (the element is a form input without a label)
-
-Pick [`…ByPlaceholder`](https://testing-library.com/docs/queries/byplaceholder).
-
-If you can't provide a label or can't use the label text to identify form fields, try getting them through placeholder text. Like the previous selector, it is only useful for input elements.
-
-```javascript
-import { screen } from "@testing-library/react";
-
-const username = screen.getByPlaceholderText(/username/i);
-const password = screen.getByPlaceholderText(/password/i);
-```
-
 ### else if (the element is a non-interactive element)
 
 Pick [`…ByText`](https://testing-library.com/docs/queries/bytext).
@@ -253,7 +240,7 @@ As final note, remember that you are running test in the DOM and you can use the
 
 ## Testing Playground
 
-Still not sure which query to use? [Testing Playground](https://testing-playground.com/) can help you choose the right query. It is a super useful tool that suggests Testing Library queries for the selected item. You can download it as [Chrome Extension](https://chrome.google.com/webstore/detail/testing-playground/hejbmebodbijjdhflfknehhcgaklhano) or as [Firefox Extension](https://addons.mozilla.org/en-US/firefox/addon/testing-playground) and directly run for the app you are developing!
+Still not sure which query to use? [Testing Playground](https://testing-playground.com/) can help you choose the right query. It is a super useful tool that suggests Testing Library queries for the selected item.
 
 ## Code reference
 
